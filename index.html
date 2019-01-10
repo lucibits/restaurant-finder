@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ReviewEat! Restaurant Review App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="p7.css">
+    <link href='https://fonts.googleapis.com/css?family=Russo One' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="p7.json"></script>
+  </head>
+  <body>
+
+  	<header class="header">
+      <h1>Review<span>Eat!</span></h1>
+
+	    <form class="form-inline" action="javascript:;" onsubmit="">
+	      <input id="searchBar" type="text" placeholder="Search.." name="search">
+	      <button class="search fa fa-search" type="submit" onclick="searchPlaces()"></button>
+	    </form>
+    </header>
+
+  	<div class="row">
+  		<div class="column1">
+  			<div id="map"></div>
+  		</div>
+  		<div id="column2">
+  			<div id="filter">
+  				<div>Filter by Rating:
+  					<label>						
+  						<input type="checkbox" id="1star" onclick="filterByStar()">
+  						<span class="checkmark"></span>1
+  						<span class="fa fa-star checked"></span>
+  					</label>
+  					<label>
+  						<input type="checkbox" id="2star" onclick="filterByStar()">
+  						<span class="checkmark"></span>2
+  						<span class="fa fa-star checked"></span>
+  					</label>
+  					<label>
+  						<input type="checkbox" id="3star" onclick="filterByStar()">
+  						<span class="checkmark"></span>3
+  						<span class="fa fa-star checked"></span>
+  					</label>
+  					<label>
+  						<input type="checkbox" id="4star" onclick="filterByStar()">
+  						<span class="checkmark"></span>4
+  						<span class="fa fa-star checked"></span>
+  					</label>
+  					<label>
+  						<input type="checkbox" id="5star" onclick="filterByStar()">
+  						<span class="checkmark"></span>5
+  						<span class="fa fa-star checked"></span>
+  					</label>
+  				</div>
+  			</div>
+
+			</div>
+
+			<!-- Start Modal -->
+			<div id="myModal" class="modal">
+			  <!-- Modal content -->
+			  <div class="modal-content">
+			    <span class="close">&times;</span>
+			    <h3>Add a Review about this restaurant</h3>
+			    <form id="addReviewForm" action="javascript:;" onsubmit="addReview(this)">
+					  First name:<br>
+					  <br>
+					  <input class="modalInput" type="text" name="firstname" maxlength="15" value="" autofocus>
+					  <br>
+					  <br>
+					  Last name:<br>
+					  <br>
+					  <input class="modalInput" type="text" maxlength="15" name="lastname" value="">
+					  <br>
+					  <br>
+					  How many <span class="fa fa-star checked"></span> ?:<br>
+					  <br>
+					  <select>
+						  <option value="1">1</option>
+						  <option value="2">2</option>
+						  <option value="3">3</option>
+						  <option value="4">4</option>
+						  <option value="5">5</option>
+					  </select>
+					  <br>
+					  <br>
+					  Your Review:<br>	
+					  <br>				  
+					  <textarea class="modalInput" id="newComment" name="your review" maxlength="500">Tell others about your experience</textarea>
+					  <br>
+					  <br>
+					  <input class="modalbutton" type="submit" value="Submit">
+				</form> 
+			  </div>
+
+			</div>
+			<!-- End Modal -->
+
+			<!-- Start Restaurant Modal -->
+			<div id="myrestModal" class="modal">
+			  <!-- Modal content -->
+			  <div class="modal-content">
+			    <span class="close">&times;</span>
+			    <h3>Add a Restaurant to this Location</h3>
+			    <form id="restModal" action="javascript:;" onsubmit="addRestaurant(this)">
+					  Restaurant Name:<br>
+					  <br>
+					  <input class="modalInput" type="text" name="restName" maxlength="15" value="" autofocus>
+					  <br>
+					  <br>
+					  Address:<br>
+					  <br>
+					  <input class="modalInput" type="text" maxlength="15" name="address" value="">
+					  <br>
+					  <br>
+					  Latitud:<br>	
+					  <br>				  
+					  <input class="modalInput" id="formLat" type="text" maxlength="15" name="lat" value="0">
+					  <br>
+					  <br>
+					  Longitud:<br>	
+					  <br>				  
+					  <input class="modalInput" id="formLng" type="text" maxlength="15" name="long" value="0">
+
+					  <br>
+					  <br>
+					  <input class="modalbutton" type="submit" value="Submit">
+				</form> 
+			  </div>
+
+			</div>
+			<!-- End Modal -->
+  		</div>
+  	</div>
+  	<footer>ReviewEat! by LVFR 2018</footer>
+
+    <script type="text/javascript" src="p7.js"></script>
+  	<script src="https://maps.googleapis.com/maps/api/js?key=_INSERT_KEY_HERE_&callback=initMap&libraries=places,geometry"
+    async defer></script>
+
+  </body>
+  </html>

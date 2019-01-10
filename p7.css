@@ -1,0 +1,331 @@
+* {
+	box-sizing: border-box; 
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #f8f8f8;
+}
+
+.column1 {
+	float: left;
+	width: 100%;
+	padding: 10px;
+}
+
+#column2 {
+	float: left;
+	width: 100%;
+	padding: 10px;
+	line-height: 19px;
+	font-family: Trebuchet;
+	font-size: 15px;
+	color: #313335;
+}
+
+#filter {
+    margin-right: 10px;
+    font-family: Helvetica;
+}
+
+#titleRestaurant {
+	font-family: Helvetica;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+.row {
+	padding: 10px 20px 0 20px;
+}
+
+/*clear floats after the columns*/
+.row::after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.header {
+  font-family: 'Russo One';
+  color: orange;
+  padding: 15px 30px 5px 30px;
+  width: 100%;
+  display: inline-flex;
+}
+
+.form-inline {
+	width: 100%;
+	height: 40px;
+	margin-top: 20px;
+	margin-left: 15px;
+	display: inline-flex;
+}
+
+input[name="search"] {
+	padding: 10px;
+	width: 100%;
+	border-radius: 10px;
+	border: none;
+	margin-right: 10px;
+}
+
+button.search {
+	padding: 10px;
+	border-radius: 10px;
+	border: 1px solid #ff6600;
+	border: 1px solid #ff910e;
+	background-color: transparent;
+}
+
+span {
+  color: #ff6600;
+}
+
+.fa {
+  color: #ff910e;
+}
+
+.fa-search:hover {
+	color: white;
+}
+
+
+.search:hover {
+	background-color: #ff910e;
+}
+
+#addRestaurantButton {
+	color: #ff910e;
+	background-color: white;
+	border-radius: 15px;
+    border: 1px solid #ff910e;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    cursor: pointer;
+    display: inline;
+}
+
+
+#leaveReviewButton {
+	color: #ff910e;
+	background-color: white;
+	border-radius: 15px;
+    border: 1px solid #ff910e;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    width: 50%;
+    cursor: pointer;
+    display: inline;
+}
+
+#moreReviews {
+	color: #ff910e;
+	background-color: white;
+	border-radius: 15px;
+    border: 1px solid #ff910e;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+    width: 50%;
+    cursor: pointer;
+    display: inline;
+}
+
+#map {
+	width: 100%;
+	height: 400px;
+	border-radius: 5px;
+}
+
+/*#columnContainer {
+	border: 1px solid #ccc;
+}*/
+
+/*START OF MODAL*/
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 50px;
+    border: 1px solid #888;
+    width: 50%;
+    font-family: helvetica;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: grey;
+}
+
+#leaveReviewButton:hover,
+#moreReviews:hover,
+#addRestaurantButton:hover {
+    color: white;
+    background-color: #ff910e;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#buttonContainer {
+	margin-top: 5px;
+	display: flex;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: lightgrey; 
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: grey; 
+}
+
+input.modalInput, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+input.modalbutton {
+	border-radius: 25px;
+	width: 100%;
+    padding: 12px;
+    border: 1px solid orange;
+    background-color: transparent;
+    color: orange;
+	resize: vertical;
+	margin-top: 15px;
+}
+
+input.modalbutton:hover {
+	background-color: orange;
+	color: white;
+}
+/*END OF MODAL*/
+
+#restaurantList {
+
+	background-color: white;
+	border-radius: 5px;
+	padding: 8px;
+	margin: 10px 0;
+}
+
+#restaurantList:hover {
+	box-shadow: 0px 0px 10px #cccccc;
+}
+
+#restaurantList::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+#restaurantList > img {
+  float: left;
+  margin-right: 15px;
+  border-radius: 5%;
+}
+
+#restaurantList > p { 
+	margin: 2px;
+	padding: 0;
+}
+
+
+#review {
+	background-color: white;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 5px 0;
+	overflow: auto;
+}
+
+/*#review img {
+  float: left;
+  margin-right: 20px;
+  border-radius: 20%;
+}*/
+
+#review > p { 
+	margin: 4px;
+	padding: 0;
+	display: inline-block;
+}
+
+/*.fa {
+    font-size: 25px;
+    color: lightblue;
+}*/
+
+.checked {
+    color: orange;
+}
+
+
+footer {
+	padding: 0 30px 0 30px;
+	font-family: 'Russo One';
+	font-size: 10px;
+}
+
+@media only screen and (min-width: 768px) {
+	#map {
+    width: 100%;
+    height:700px;
+    border-radius: 5px;
+	}
+	.column1 {
+		width: 70%;
+	}
+	#column2 {
+		width: 30%;
+		height: 710px;
+		overflow: auto;
+	}
+}
